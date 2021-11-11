@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import './App.css';
 import Home from './components/Home/Home';
+import Login from './components/Login/Login';
 import Orders from './components/Orders/Orders';
 import Footer from './components/Shared/Footer/Footer';
 import Header from './components/Shared/Header/Header';
@@ -24,6 +25,9 @@ function App() {
           </Route>
           <Route path='/orders'>
             <Orders></Orders>
+          </Route>
+          <Route path='/login'>
+            <Login></Login>
           </Route>
         </Switch>
         <Footer></Footer>

@@ -18,19 +18,20 @@ const Header = () => {
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='ms-auto'>
               <Link to='/home' className='nav-link'>
-                <Nav.Link href='#home'>Home</Nav.Link>
+                <Nav.Link href='#'>Home</Nav.Link>
               </Link>
               <Link to='/shop' className='nav-link'>
-                <Nav.Link href='#home'>Shop</Nav.Link>
+                <Nav.Link href='#'>Shop</Nav.Link>
               </Link>
               <Link to='/orders' className='nav-link'>
-                <Nav.Link href='#home'>Orders</Nav.Link>
+                <Nav.Link href='#'>Orders</Nav.Link>
+              </Link>
+              <Link to='/login' className='nav-link'>
+                <Nav.Link href='#'>Login</Nav.Link>
               </Link>
               <NavDropdown title='Dropdown' id='basic-nav-dropdown'>
                 <Link className='nav-link' to='/dashboard'>
-                  <NavDropdown.Item href='#action/3.1'>
-                    Dashboard
-                  </NavDropdown.Item>
+                  <NavDropdown.Item href='#'>Dashboard</NavDropdown.Item>
                 </Link>
                 <NavDropdown.Divider />
               </NavDropdown>

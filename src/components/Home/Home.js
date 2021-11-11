@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Banner from '../Banner/Banner';
 import Shop from '../Shop/Shop';
 import Testimonial from '../Testimonial/Testimonial';
 
@@ -13,22 +14,28 @@ const Home = () => {
   console.log(watches);
   return (
     <div>
-      <h2>this is shop</h2>
+      <Banner></Banner>
+      <h2 className='my-4 fw-bold'> SHOP</h2>
+      <hr />
       <div className='container'>
-        <div class='row row-cols-1 row-cols-md-4 g-4'>
+        <div className='row row-cols-1 row-cols-md-4 g-4'>
           {watches.slice(0, 6).map((watch) => (
-            <div class='col'>
-              <div class='card'>
-                <img src={watch.image} class='card-img-top' alt='...' />
-                <div class='card-body'>
-                  <h5 class='card-title'>{watch.name}</h5>
-                  <p class='card-text'>$ {watch.price}</p>
+            <div className='col'>
+              <div className='card'>
+                <img src={watch.image} className='card-img-top' alt='...' />
+                <div className='card-body'>
+                  <h5 className='card-title'>{watch.name}</h5>
+                  <h5 className='card-text fw-bold'>$ {watch.price}</h5>
+                  <button className='btn btn-warning'>
+                    <i className='fas fa-shopping-cart me-2'></i>Add to Cart
+                  </button>
                 </div>
               </div>
             </div>
           ))}
         </div>
       </div>
+
       <Testimonial></Testimonial>
     </div>
   );

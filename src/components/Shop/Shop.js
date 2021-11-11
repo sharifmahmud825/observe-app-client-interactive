@@ -12,7 +12,8 @@ const Shop = () => {
   console.log(watches);
   return (
     <div>
-      <h2>this is shop</h2>
+      <h2 className='fw-bold my-4'>SHOP</h2>
+      <hr />
       <div className='container'>
         <div class='row row-cols-1 row-cols-md-4 g-4'>
           {watches.map((watch) => (
