@@ -7,7 +7,13 @@ const Header = () => {
     <div>
       <Navbar bg='dark' variant='dark' expand='lg'>
         <Container>
-          <Navbar.Brand href='#home'>React-Bootstrap</Navbar.Brand>
+          <Navbar.Brand href='#home'>
+            <img
+              src='https://i.ibb.co/Vm70mzz/logo-2.png'
+              alt='logo'
+              className='img-fluid w-75'
+            />
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='ms-auto'>
