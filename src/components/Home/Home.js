@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Banner from '../Banner/Banner';
 import Shop from '../Shop/Shop';
 import Testimonial from '../Testimonial/Testimonial';
@@ -26,9 +27,11 @@ const Home = () => {
                 <div className='card-body'>
                   <h5 className='card-title'>{watch.name}</h5>
                   <h5 className='card-text fw-bold'>$ {watch.price}</h5>
-                  <button className='btn btn-warning'>
-                    <i className='fas fa-shopping-cart me-2'></i>Add to Cart
-                  </button>
+                  <Link to={`/orders/${watch._id}`}>
+                    <button className='btn btn-warning'>
+                      <i className='fas fa-shopping-cart me-2'></i>Add to Cart
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
