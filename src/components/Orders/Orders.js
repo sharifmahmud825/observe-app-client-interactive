@@ -18,7 +18,7 @@ const Orders = () => {
 
   return (
     <div>
-      <h2>This is order page {singleWatch.name}</h2>
+      <h2>This is order page</h2>
     </div>
   );
 };

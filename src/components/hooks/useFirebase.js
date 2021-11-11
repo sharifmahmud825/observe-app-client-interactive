@@ -14,7 +14,7 @@ initializeAuthentication();
 const useFirebase = () => {
   const auth = getAuth();
   const [user, setUser] = useState({});
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   // Create user / Register user
   const registerUser = (email, password) => {
@@ -49,15 +49,16 @@ const useFirebase = () => {
       } else {
         setUser({});
       }
-      return () => unsubscribed;
+      setIsLoading(false);
     });
+    return () => unsubscribed();
   }, []);
 
   // log out user
   const logOut = () => {
     signOut(auth)
       .then(() => {
-        // Sign-out successful.
+        setUser({});
       })
       .catch((error) => {
         // An error happened.

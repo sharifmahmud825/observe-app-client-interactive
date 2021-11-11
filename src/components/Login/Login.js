@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import useAuth from '../context/useAuth';
 
 const Login = () => {
-  const { loginUser, setUser } = useAuth();
+  const { loginUser, setUser, setIsLoading } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const location = useLocation();
@@ -20,12 +20,16 @@ const Login = () => {
         // Signed in
         const user = userCredential.user;
         setUser(user);
+        setIsLoading(true);
         history.push(uri);
         // ...
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   };
 
