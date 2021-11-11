@@ -4,6 +4,7 @@ import './App.css';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
 import Orders from './components/Orders/Orders';
+import Register from './components/Register/Register';
 import Footer from './components/Shared/Footer/Footer';
 import Header from './components/Shared/Header/Header';
 import Shop from './components/Shop/Shop';
@@ -28,6 +29,9 @@ function App() {
           </Route>
           <Route path='/login'>
             <Login></Login>
+          </Route>
+          <Route path='/register'>
+            <Register></Register>
           </Route>
         </Switch>
         <Footer></Footer>
