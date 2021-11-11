@@ -2,11 +2,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import './App.css';
 import Home from './components/Home/Home';
+import Orders from './components/Orders/Orders';
+import Footer from './components/Shared/Footer/Footer';
+import Header from './components/Shared/Header/Header';
+import Shop from './components/Shop/Shop';
 
 function App() {
   return (
     <div className='App'>
       <Router>
+        <Header></Header>
         <Switch>
           <Route exact path='/'>
             <Home></Home>
@@ -14,7 +19,14 @@ function App() {
           <Route path='/home'>
             <Home></Home>
           </Route>
+          <Route path='/shop'>
+            <Shop></Shop>
+          </Route>
+          <Route path='/orders'>
+            <Orders></Orders>
+          </Route>
         </Switch>
+        <Footer></Footer>
       </Router>
     </div>
   );
