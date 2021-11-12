@@ -12,7 +12,7 @@ const Home = () => {
       .then((res) => res.json())
       .then((data) => setWatches(data));
   }, []);
-  console.log(watches);
+
   return (
     <div>
       <Banner></Banner>
