@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import useAuth from '../context/useAuth';
 
 const Register = () => {
-  const { registerUser, setUser, setIsLoading } = useAuth();
+  const { registerUser, setUser, setIsLoading, updateUser } = useAuth();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -33,8 +33,9 @@ const Register = () => {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        setUser(user);
         setIsLoading(true);
+        setUser(user);
+        updateUser(name);
         history.push(uri);
       })
       .catch((error) => {
