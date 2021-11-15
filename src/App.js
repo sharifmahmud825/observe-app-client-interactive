@@ -35,6 +35,7 @@ function App() {
             <Route path='/review'>
               <Review></Review>
             </Route>
+
             <PrivateRoute path='/orders/:id'>
               <Orders></Orders>
             </PrivateRoute>

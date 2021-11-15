@@ -2,10 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Banner from '../Banner/Banner';
 import Shop from '../Shop/Shop';
-import Testimonial from '../Testimonial/Testimonial';
 
 const Home = () => {
   const [watches, setWatches] = useState([]);
+  const [allReviews, setAllReviews] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:5000/allReviews')
+      .then((res) => res.json())
+      .then((data) => setAllReviews(data));
+  }, []);
 
   useEffect(() => {
     fetch('https://guarded-sierra-78507.herokuapp.com/watches')
@@ -38,8 +44,11 @@ const Home = () => {
           ))}
         </div>
       </div>
-
-      <Testimonial></Testimonial>
+      <div>
+        {allReviews.map((allReview) => (
+          <h2>{allReview.name}</h2>
+        ))}
+      </div>
     </div>
   );
 };

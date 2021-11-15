@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
 const MyOrders = () => {
-  const [myOrders, setMyOrders] = useState({});
+  const [myOrders, setMyOrders] = useState([]);
 
   useEffect(() => {
-    const url = `http://localhost:5000/myOrders`;
+    const url = `https://guarded-sierra-78507.herokuapp.com/myOrders`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setMyOrders(data));
