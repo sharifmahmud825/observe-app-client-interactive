@@ -29,15 +29,15 @@ const Register = () => {
   };
 
   const handleRegister = (e) => {
-    setIsLoading(true);
     e.preventDefault();
+    setIsLoading(true);
     registerUser(email, password)
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
         setUser(user);
         updateUser(name);
-        history.push(uri);
+        history.replace(uri);
       })
       .catch((error) => {
         const errorCode = error.code;

@@ -14,8 +14,8 @@ const Login = () => {
   const uri = location.state?.from || '/home';
 
   const handleLogin = (e) => {
-    setIsLoading(true);
     e.preventDefault();
+    setIsLoading(true);
     loginUser(email, password)
       .then((userCredential) => {
         // Signed in
