@@ -18,7 +18,10 @@ const useFirebase = () => {
 
   // Create user / Register user
   const registerUser = (email, password) => {
-    return createUserWithEmailAndPassword(auth, email, password);
+    setIsLoading(true);
+    return createUserWithEmailAndPassword(auth, email, password).finally(() => {
+      setIsLoading(false);
+    });
   };
 
   // get user name
@@ -40,7 +43,10 @@ const useFirebase = () => {
 
   //   Login user with email pass
   const loginUser = (email, password) => {
-    return signInWithEmailAndPassword(auth, email, password);
+    setIsLoading(true);
+    return signInWithEmailAndPassword(auth, email, password).finally(() => {
+      setIsLoading(false);
+    });
   };
 
   //   observe user

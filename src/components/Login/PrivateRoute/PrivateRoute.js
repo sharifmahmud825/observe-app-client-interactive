@@ -1,9 +1,16 @@
 import React from 'react';
-import { Redirect, Route } from 'react-router';
-import useAuth from '../context/useAuth';
+import { Route, Redirect } from 'react-router-dom';
+import useAuth from '../../context/useAuth';
 
 const PrivateRoute = ({ children, ...rest }) => {
-  const { user } = useAuth();
+  const { user, isLoading } = useAuth();
+  if (isLoading) {
+    return (
+      <div class='spinner-border' role='status'>
+        <span class='visually-hidden'>Loading...</span>
+      </div>
+    );
+  }
   return (
     <Route
       {...rest}

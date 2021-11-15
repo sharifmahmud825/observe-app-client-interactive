@@ -15,7 +15,7 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    setIsLoading(true);
+    // setIsLoading(true);
     loginUser(email, password)
       .then((userCredential) => {
         // Signed in
@@ -27,10 +27,10 @@ const Login = () => {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-      })
-      .finally(() => {
-        setIsLoading(false);
       });
+    // .finally(() => {
+    //   setIsLoading(false);
+    // });
   };
 
   const handleLoginEmail = (e) => {

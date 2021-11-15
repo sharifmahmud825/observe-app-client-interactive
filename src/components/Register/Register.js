@@ -30,7 +30,7 @@ const Register = () => {
 
   const handleRegister = (e) => {
     e.preventDefault();
-    setIsLoading(true);
+    // setIsLoading(true);
     registerUser(email, password)
       .then((userCredential) => {
         // Signed in
@@ -41,10 +41,10 @@ const Register = () => {
       })
       .catch((error) => {
         // ..
-      })
-      .finally(() => {
-        setIsLoading(false);
       });
+    // .finally(() => {
+    //   setIsLoading(false);
+    // });
   };
 
   return (
