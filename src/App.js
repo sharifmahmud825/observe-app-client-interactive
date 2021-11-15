@@ -4,9 +4,11 @@ import './App.css';
 import AuthProvider from './components/context/AuthProvider';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
+import MakeAdmin from './components/MakeAdmin/MakeAdmin';
 import ManageOrder from './components/ManageOrder/ManageOrder';
 import MyOrders from './components/MyOrders/MyOrders';
 import Orders from './components/Orders/Orders';
+import Payment from './components/Payment/Payment';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Register from './components/Register/Register';
 import Review from './components/Review/Review';
@@ -30,15 +32,21 @@ function App() {
             <Route path='/shop'>
               <Shop></Shop>
             </Route>
-            <Route path='/myOrders'>
+            <PrivateRoute path='/myOrders'>
               <MyOrders></MyOrders>
-            </Route>
-            <Route path='/review'>
+            </PrivateRoute>
+            <PrivateRoute path='/review'>
               <Review></Review>
-            </Route>
-            <Route path='/manageOrders'>
+            </PrivateRoute>
+            <PrivateRoute path='/manageOrders'>
               <ManageOrder></ManageOrder>
-            </Route>
+            </PrivateRoute>
+            <PrivateRoute path='/payment'>
+              <Payment></Payment>
+            </PrivateRoute>
+            <PrivateRoute path='/makeAdmin'>
+              <MakeAdmin></MakeAdmin>
+            </PrivateRoute>
             <PrivateRoute path='/orders/:id'>
               <Orders></Orders>
             </PrivateRoute>

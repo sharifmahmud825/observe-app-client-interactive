@@ -32,33 +32,32 @@ const Header = () => {
                 <Nav.Link href='#orders'>Orders</Nav.Link>
               </Link>
 
-              <Link to='/dashboard' className='nav-link'>
-                <NavDropdown title='Dashboard' id='basic-nav-dropdown'>
-                  <Link to='/myOrders' className='nav-link text-black'>
-                    <Nav.Link href='#myOrders'>My Orders</Nav.Link>
-                  </Link>
-                  <Link to='/review' className='nav-link text-black'>
-                    <Nav.Link href='#review'>Review</Nav.Link>
-                  </Link>
-                  <Link to='/review' className='nav-link text-black'>
-                    <Nav.Link href='#payment'>Payment</Nav.Link>
-                  </Link>
-                </NavDropdown>
-              </Link>
-
-              <Link to='/admin' className='nav-link'>
-                <NavDropdown title='Admin' id='basic-nav-dropdown'>
-                  <Link to='/manageOrders' className='nav-link text-black'>
-                    <Nav.Link href='#manageOrders'>Manage Orders</Nav.Link>
-                  </Link>
-                  <Link to='/makeAdmin' className='nav-link text-black'>
-                    <Nav.Link href='#review'>Make Admin</Nav.Link>
-                  </Link>
-                </NavDropdown>
-              </Link>
-
               {user.email ? (
                 <div className='d-flex'>
+                  <Link to='/dashboard' className='nav-link'>
+                    <NavDropdown title='Dashboard' id='basic-nav-dropdown'>
+                      <Link to='/myOrders' className='nav-link text-black'>
+                        <Nav.Link href='#myOrders'>My Orders</Nav.Link>
+                      </Link>
+                      <Link to='/review' className='nav-link text-black'>
+                        <Nav.Link href='#review'>Review</Nav.Link>
+                      </Link>
+                      <Link to='/payment' className='nav-link text-black'>
+                        <Nav.Link href='#payment'>Payment</Nav.Link>
+                      </Link>
+                    </NavDropdown>
+                  </Link>
+
+                  <Link to='/admin' className='nav-link'>
+                    <NavDropdown title='Admin' id='basic-nav-dropdown'>
+                      <Link to='/manageOrders' className='nav-link text-black'>
+                        <Nav.Link href='#manageOrders'>Manage Orders</Nav.Link>
+                      </Link>
+                      <Link to='/makeAdmin' className='nav-link text-black'>
+                        <Nav.Link href='#review'>Make Admin</Nav.Link>
+                      </Link>
+                    </NavDropdown>
+                  </Link>
                   <Navbar.Text className='nav-link'>
                     <a href='#login'>{user.email}</a>
                   </Navbar.Text>
