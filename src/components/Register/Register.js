@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import useAuth from '../context/useAuth';
 
 const Register = () => {
-  const { registerUser, setUser, setIsLoading, updateUser, user, isLoading } =
+  const { registerUser, setUser, setIsLoading, updateUser, isLoading } =
     useAuth();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -40,8 +40,6 @@ const Register = () => {
         history.replace(uri);
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
         // ..
       })
       .finally(() => {

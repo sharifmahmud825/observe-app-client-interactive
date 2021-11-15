@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import './App.css';
+import AddProduct from './components/AddProduct/AddProduct';
 import AuthProvider from './components/context/AuthProvider';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
@@ -43,6 +44,9 @@ function App() {
             </PrivateRoute>
             <PrivateRoute path='/payment'>
               <Payment></Payment>
+            </PrivateRoute>
+            <PrivateRoute path='/addProduct'>
+              <AddProduct></AddProduct>
             </PrivateRoute>
             <PrivateRoute path='/makeAdmin'>
               <MakeAdmin></MakeAdmin>

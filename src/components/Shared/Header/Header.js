@@ -53,6 +53,9 @@ const Header = () => {
                       <Link to='/manageOrders' className='nav-link text-black'>
                         <Nav.Link href='#manageOrders'>Manage Orders</Nav.Link>
                       </Link>
+                      <Link to='/addProduct' className='nav-link text-black'>
+                        <Nav.Link href='#addProduct'>Add Product</Nav.Link>
+                      </Link>
                       <Link to='/makeAdmin' className='nav-link text-black'>
                         <Nav.Link href='#review'>Make Admin</Nav.Link>
                       </Link>
