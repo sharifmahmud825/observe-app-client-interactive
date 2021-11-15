@@ -45,9 +45,9 @@ function App() {
             <PrivateRoute path='/payment'>
               <Payment></Payment>
             </PrivateRoute>
-            <PrivateRoute path='/addProduct'>
+            <Route path='/addProduct'>
               <AddProduct></AddProduct>
-            </PrivateRoute>
+            </Route>
             <PrivateRoute path='/makeAdmin'>
               <MakeAdmin></MakeAdmin>
             </PrivateRoute>
