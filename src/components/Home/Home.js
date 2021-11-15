@@ -9,7 +9,7 @@ const Home = () => {
 
   // get review
   useEffect(() => {
-    fetch('http://localhost:5000/allReviews')
+    fetch('https://guarded-sierra-78507.herokuapp.com/allReviews')
       .then((res) => res.json())
       .then((data) => setAllReviews(data));
   }, []);
@@ -46,13 +46,13 @@ const Home = () => {
           ))}
         </div>
       </div>
-      <div>
-        <h2>This is review</h2>
+      <div className='my-4 bg-light py-4'>
+        <h2 className='my-4 text-primary'> Reviews!</h2>
         <div className='container'>
           <div class='row row-cols-1 row-cols-md-3 g-4'>
             {allReviews.map((allReview) => (
               <div class='col'>
-                <div class='card'>
+                <div class='card rounded-3 shadow'>
                   <div class='card-body'>
                     <h5 class='card-title'>{allReview.name}</h5>
                     <p class='card-text'>{allReview.comments}</p>

@@ -20,6 +20,7 @@ const Orders = () => {
 
   const { _id, name, description, image, price } = matchedData || {};
   const [bookingInfo, setBookingInfo] = useState({});
+  const [bookingSucces, setBookingSuccess] = useState(false);
 
   const handleOnBlur = (e) => {
     const field = e.target.name;
@@ -46,12 +47,20 @@ const Orders = () => {
     })
       .then((res) => res.json())
       .then((data) => {
+        if (data.insertedId) {
+          return setBookingSuccess(true);
+        }
         console.log(data);
       });
   };
   return (
     <div>
       <div className='container my-3'>
+        {bookingSucces && (
+          <div class='alert alert-success' role='alert'>
+            Your Order has been placed successfully!
+          </div>
+        )}
         <div className='row'>
           <div className='col-md-6'>
             <div className='card mb-3'>
