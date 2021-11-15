@@ -34,6 +34,9 @@ const Header = () => {
               <Link to='/dashboard' className='nav-link'>
                 <Nav.Link href='#dashboard'>Dashboard</Nav.Link>
               </Link>
+              <Link to='/myOrders' className='nav-link'>
+                <Nav.Link href='#myOrders'>My Orders</Nav.Link>
+              </Link>
               {user.email ? (
                 <div className='d-flex'>
                   <Navbar.Text className='nav-link'>

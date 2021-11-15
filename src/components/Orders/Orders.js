@@ -39,7 +39,7 @@ const Orders = () => {
     };
 
     // send data to the server
-    fetch('http://localhost:5000/watches', {
+    fetch('https://guarded-sierra-78507.herokuapp.com/watches', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(placeOrder),
