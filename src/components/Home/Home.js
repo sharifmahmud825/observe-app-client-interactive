@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Banner from '../Banner/Banner';
-import Shop from '../Shop/Shop';
 
 const Home = () => {
   const [watches, setWatches] = useState([]);

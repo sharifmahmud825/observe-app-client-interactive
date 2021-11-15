@@ -18,7 +18,7 @@ const Orders = () => {
   const matchedData = watches.find((watch) => watch?._id == id);
   // console.log(matchedData);
 
-  const { _id, name, description, image, price } = matchedData || {};
+  const { name, description, image, price } = matchedData || {};
   const [bookingInfo, setBookingInfo] = useState({});
   const [bookingSucces, setBookingSuccess] = useState(false);
 
