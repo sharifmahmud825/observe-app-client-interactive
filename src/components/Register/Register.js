@@ -1,12 +1,13 @@
 import Button from '@restart/ui/esm/Button';
 import React, { useState } from 'react';
 import { useHistory, useLocation } from 'react-router';
-import { Form } from 'react-bootstrap';
+import { Form, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAuth from '../context/useAuth';
 
 const Register = () => {
-  const { registerUser, setUser, setIsLoading, updateUser } = useAuth();
+  const { registerUser, setUser, setIsLoading, updateUser, user, isLoading } =
+    useAuth();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -28,12 +29,12 @@ const Register = () => {
   };
 
   const handleRegister = (e) => {
+    setIsLoading(true);
     e.preventDefault();
     registerUser(email, password)
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        setIsLoading(true);
         setUser(user);
         updateUser(name);
         history.push(uri);
@@ -51,43 +52,46 @@ const Register = () => {
   return (
     <div>
       <div className='container'>
+        {isLoading && <Spinner className='text-center' animation='grow' />}
         <div className='row'>
           <div className='col-md-3'></div>
           <div className='col-md-6 px-4 py-3 shadow my-5'>
             <h2 className='my-3'>Register</h2>
-            <Form onSubmit={handleRegister}>
-              <Form.Group className='mb-3'>
-                <Form.Control
-                  onBlur={handleRegisterName}
-                  type='text'
-                  placeholder='Enter Name'
-                />
-              </Form.Group>
-              <Form.Group className='mb-3'>
-                <Form.Control
-                  onBlur={handleRegisterEmail}
-                  type='email'
-                  placeholder='Enter email'
-                />
-              </Form.Group>
-              <Form.Group className='mb-3'>
-                <Form.Control
-                  onBlur={handleRegisterPassword}
-                  type='password'
-                  placeholder='Password'
-                />
-              </Form.Group>
-              <Button
-                variant='primary'
-                type='submit'
-                className='btn btn-primary w-100'
-              >
-                Submit
-              </Button>
-              <Link to='/login'>
-                <p className='my-2'>Already Registered ? Please Login</p>
-              </Link>
-            </Form>
+            {!isLoading && (
+              <Form onSubmit={handleRegister}>
+                <Form.Group className='mb-3'>
+                  <Form.Control
+                    onBlur={handleRegisterName}
+                    type='text'
+                    placeholder='Enter Name'
+                  />
+                </Form.Group>
+                <Form.Group className='mb-3'>
+                  <Form.Control
+                    onBlur={handleRegisterEmail}
+                    type='email'
+                    placeholder='Enter email'
+                  />
+                </Form.Group>
+                <Form.Group className='mb-3'>
+                  <Form.Control
+                    onBlur={handleRegisterPassword}
+                    type='password'
+                    placeholder='Password'
+                  />
+                </Form.Group>
+                <Button
+                  variant='primary'
+                  type='submit'
+                  className='btn btn-primary w-100'
+                >
+                  Submit
+                </Button>
+                <Link to='/login'>
+                  <p className='my-2'>Already Registered ? Please Login</p>
+                </Link>
+              </Form>
+            )}
           </div>
           <div className='col-md-3'></div>
         </div>

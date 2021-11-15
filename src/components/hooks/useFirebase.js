@@ -18,12 +18,12 @@ const useFirebase = () => {
 
   // Create user / Register user
   const registerUser = (email, password) => {
-    console.log(email, password);
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   // get user name
   const updateUser = (name) => {
+    setIsLoading(true);
     updateProfile(auth.currentUser, {
       displayName: name,
     })
@@ -32,12 +32,14 @@ const useFirebase = () => {
       })
       .catch((error) => {
         // An error occurred
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   };
 
   //   Login user with email pass
   const loginUser = (email, password) => {
-    console.log(email, password);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
@@ -56,12 +58,16 @@ const useFirebase = () => {
 
   // log out user
   const logOut = () => {
+    setIsLoading(true);
     signOut(auth)
       .then(() => {
         setUser({});
       })
       .catch((error) => {
         // An error happened.
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   };
   return {
