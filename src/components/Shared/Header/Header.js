@@ -7,13 +7,13 @@ const Header = () => {
   const { user, logOut } = useAuth();
   return (
     <div>
-      <Navbar bg='dark' variant='dark' expand='lg'>
+      <Navbar bg='light' expand='lg'>
         <Container>
           <Navbar.Brand href='#home'>
             <img
-              src='https://i.ibb.co/Vm70mzz/logo-2.png'
+              src='https://i.ibb.co/42PdzCY/logo.png'
               alt='logo'
-              className='img-fluid w-75'
+              className='img-fluid w-25'
             />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
@@ -31,12 +31,32 @@ const Header = () => {
               <Link to='/orders' className='nav-link'>
                 <Nav.Link href='#orders'>Orders</Nav.Link>
               </Link>
+
               <Link to='/dashboard' className='nav-link'>
-                <Nav.Link href='#dashboard'>Dashboard</Nav.Link>
+                <NavDropdown title='Dashboard' id='basic-nav-dropdown'>
+                  <Link to='/myOrders' className='nav-link text-black'>
+                    <Nav.Link href='#myOrders'>My Orders</Nav.Link>
+                  </Link>
+                  <Link to='/review' className='nav-link text-black'>
+                    <Nav.Link href='#review'>Review</Nav.Link>
+                  </Link>
+                  <Link to='/review' className='nav-link text-black'>
+                    <Nav.Link href='#payment'>Payment</Nav.Link>
+                  </Link>
+                </NavDropdown>
               </Link>
-              <Link to='/myOrders' className='nav-link'>
-                <Nav.Link href='#myOrders'>My Orders</Nav.Link>
+
+              <Link to='/admin' className='nav-link'>
+                <NavDropdown title='Admin' id='basic-nav-dropdown'>
+                  <Link to='/manageOrders' className='nav-link text-black'>
+                    <Nav.Link href='#manageOrders'>Manage Orders</Nav.Link>
+                  </Link>
+                  <Link to='/makeAdmin' className='nav-link text-black'>
+                    <Nav.Link href='#review'>Make Admin</Nav.Link>
+                  </Link>
+                </NavDropdown>
               </Link>
+
               {user.email ? (
                 <div className='d-flex'>
                   <Navbar.Text className='nav-link'>

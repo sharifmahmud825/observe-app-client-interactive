@@ -4,6 +4,7 @@ import './App.css';
 import AuthProvider from './components/context/AuthProvider';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
+import ManageOrder from './components/ManageOrder/ManageOrder';
 import MyOrders from './components/MyOrders/MyOrders';
 import Orders from './components/Orders/Orders';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
@@ -34,6 +35,9 @@ function App() {
             </Route>
             <Route path='/review'>
               <Review></Review>
+            </Route>
+            <Route path='/manageOrders'>
+              <ManageOrder></ManageOrder>
             </Route>
             <PrivateRoute path='/orders/:id'>
               <Orders></Orders>
